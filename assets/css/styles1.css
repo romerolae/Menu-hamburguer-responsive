@@ -1,0 +1,39 @@
+.contenedor {
+	display: flex;
+	flex-direction: column;
+	padding: 3rem;
+	gap: 1rem;
+}
+
+.card {
+	background-color: grey;
+	height: 350px;
+}
+
+@media screen and (min-width: 600px) {
+	.contenedor {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+	.one {
+		flex-grow: 1;
+	}
+
+	.two {
+		flex-grow: 2;
+	}
+	.three {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.one,
+	.two {
+		flex-grow: 1;
+	}
+	.three {
+		flex-grow: 1;
+		width: auto;
+	}
+}

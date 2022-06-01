@@ -1,0 +1,60 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+		'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1.25rem;
+	height: 60px;
+	box-shadow: 0 10px 20px 10px #ddd;
+}
+nav > div > img {
+	width: 45px;
+}
+
+input#menu-hamburguesa {
+	visibility: hidden;
+}
+
+input#menu-hamburguesa ~ ul {
+	background-color: thistle;
+	list-style: none;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	height: calc(100vh - 60px);
+	top: 60px;
+	flex-direction: column;
+	align-items: center;
+	gap: 2rem;
+	padding: 2rem 1rem;
+	display: none;
+}
+/* Utiliza el pseudoelemento checked para activar el menu hanburgesa  */
+input#menu-hamburguesa:checked ~ ul {
+	display: flex;
+}
+
+@media screen and (min-width: 600px) {
+	label {
+		display: none;
+	}
+
+	input#menu-hamburguesa ~ ul {
+		position: static;
+		background-color: transparent;
+		display: flex;
+		flex-direction: row;
+		height: auto;
+		justify-content: flex-end;
+	}
+}
